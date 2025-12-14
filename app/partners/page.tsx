@@ -10,55 +10,55 @@ export default function PartnersPage() {
     <>
       <style>{`
         .partner-hero { text-align: center; padding: 80px 0 60px; position: relative; }
-        .partner-badge { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; background: linear-gradient(135deg, rgba(34,197,94,0.2), rgba(16,185,129,0.2)); border: 1px solid rgba(34,197,94,0.3); border-radius: 24px; font-size: 0.8rem; font-weight: 600; color: var(--success); margin-bottom: 24px; }
+        .partner-badge { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; background: linear-gradient(135deg, rgba(34,197,94,0.2), rgba(16,185,129,0.2)); border: 1px solid rgba(34,197,94,0.3); border-radius: 24px; font-size: 0.8rem; font-weight: 600; color: #10b981; margin-bottom: 24px; }
         .partner-hero h1 { font-size: 2.75rem; font-weight: 800; margin-bottom: 20px; line-height: 1.2; }
-        .partner-hero h1 span { color: var(--success); }
-        .partner-hero > p { font-size: 1.25rem; color: var(--text-secondary); max-width: 650px; margin: 0 auto 32px; }
+        .partner-hero h1 span { color: #10b981; }
+        .partner-hero > p { font-size: 1.25rem; color: #a1a1aa; max-width: 650px; margin: 0 auto 32px; }
         .hero-stats { display: flex; gap: 48px; justify-content: center; margin-bottom: 32px; flex-wrap: wrap; }
         .hero-stat { text-align: center; }
-        .hero-stat-value { font-size: 2.5rem; font-weight: 800; color: var(--success); }
-        .hero-stat-label { font-size: 0.85rem; color: var(--text-muted); }
+        .hero-stat-value { font-size: 2.5rem; font-weight: 800; color: #10b981; }
+        .hero-stat-label { font-size: 0.85rem; color: #6b6b76; }
         .how-section { padding: 60px 0; }
         .how-header { text-align: center; margin-bottom: 48px; }
         .how-header h2 { font-size: 2rem; margin-bottom: 12px; }
         .how-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
         .how-card { text-align: center; }
-        .how-card-number { width: 48px; height: 48px; background: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; font-weight: 700; color: white; margin: 0 auto 16px; }
+        .how-card-number { width: 48px; height: 48px; background: #8b5cf6; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; font-weight: 700; color: white; margin: 0 auto 16px; }
         .how-card h3 { font-size: 1.1rem; margin-bottom: 8px; }
-        .how-card p { font-size: 0.9rem; color: var(--text-muted); }
+        .how-card p { font-size: 0.9rem; color: #6b6b76; }
         .bounties-section { padding: 60px 0; }
         .bounties-header { text-align: center; margin-bottom: 40px; }
         .bounties-header h2 { font-size: 2rem; margin-bottom: 12px; }
         .bounties-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 32px; }
-        .bounty-mini { background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 24px; }
-        .bounty-mini:hover { border-color: var(--accent); }
+        .bounty-mini { background: #12121a; border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 24px; }
+        .bounty-mini:hover { border-color: #8b5cf6; }
         .bounty-mini-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
         .bounty-mini-title { font-size: 1rem; font-weight: 600; }
-        .bounty-mini-status { font-size: 0.7rem; padding: 4px 8px; background: rgba(34,197,94,0.15); color: var(--success); border-radius: 10px; }
-        .bounty-mini-reward { font-size: 1.5rem; font-weight: 800; color: var(--success); margin-bottom: 8px; }
-        .bounty-mini-desc { font-size: 0.8rem; color: var(--text-muted); }
+        .bounty-mini-status { font-size: 0.7rem; padding: 4px 8px; background: rgba(34,197,94,0.15); color: #10b981; border-radius: 10px; }
+        .bounty-mini-reward { font-size: 1.5rem; font-weight: 800; color: #10b981; margin-bottom: 8px; }
+        .bounty-mini-desc { font-size: 0.8rem; color: #6b6b76; }
         .bounties-cta { text-align: center; }
-        .split-section { padding: 60px 0; background: var(--bg-secondary); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); margin: 0 -24px; padding-left: 24px; padding-right: 24px; }
+        .split-section { padding: 60px 0; background: #12121a; border-top: 1px solid rgba(255,255,255,0.08); border-bottom: 1px solid rgba(255,255,255,0.08); margin: 0 -24px; padding-left: 24px; padding-right: 24px; }
         .split-header { text-align: center; margin-bottom: 48px; }
         .split-header h2 { font-size: 2rem; margin-bottom: 12px; }
         .split-content { max-width: 700px; margin: 0 auto; }
-        .split-bar { display: flex; border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 24px; max-width: 500px; margin-left: auto; margin-right: auto; }
-        .split-you { flex: 7; background: var(--success); padding: 32px; text-align: center; }
-        .split-prax { flex: 3; background: var(--accent); padding: 32px; text-align: center; }
+        .split-bar { display: flex; border-radius: 12px; overflow: hidden; margin-bottom: 24px; max-width: 500px; margin-left: auto; margin-right: auto; }
+        .split-you { flex: 7; background: #10b981; padding: 32px; text-align: center; }
+        .split-prax { flex: 3; background: #8b5cf6; padding: 32px; text-align: center; }
         .split-percent { font-size: 2.5rem; font-weight: 800; color: white; }
         .split-label { font-size: 0.85rem; color: rgba(255,255,255,0.8); }
-        .split-explainer { background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 28px; }
+        .split-explainer { background: #0a0a0f; border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px; }
         .split-explainer h4 { font-size: 1.1rem; margin-bottom: 16px; }
-        .split-explainer p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 16px; }
-        .split-example-box { background: var(--bg-secondary); border-radius: var(--radius-md); padding: 20px; margin-top: 20px; }
-        .split-example-box h5 { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px; }
+        .split-explainer p { font-size: 0.9rem; color: #a1a1aa; line-height: 1.7; margin-bottom: 16px; }
+        .split-example-box { background: #12121a; border-radius: 8px; padding: 20px; margin-top: 20px; }
+        .split-example-box h5 { font-size: 0.85rem; color: #6b6b76; margin-bottom: 12px; }
         .split-example-row { display: flex; justify-content: space-between; padding: 8px 0; font-size: 0.9rem; }
-        .split-example-row.total { border-top: 1px solid var(--border-color); margin-top: 8px; padding-top: 12px; font-weight: 600; }
+        .split-example-row.total { border-top: 1px solid rgba(255,255,255,0.08); margin-top: 8px; padding-top: 12px; font-weight: 600; }
         .cta-section { padding: 80px 0; text-align: center; }
         .cta-section h2 { font-size: 2rem; margin-bottom: 16px; }
-        .cta-section > p { color: var(--text-secondary); max-width: 500px; margin: 0 auto 32px; }
+        .cta-section > p { color: #a1a1aa; max-width: 500px; margin: 0 auto 32px; }
         .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-        .apply-note { margin-top: 16px; font-size: 0.85rem; color: var(--text-muted); }
+        .apply-note { margin-top: 16px; font-size: 0.85rem; color: #6b6b76; }
         @media (max-width: 900px) { .how-grid, .bounties-grid { grid-template-columns: 1fr; } .hero-stats { flex-direction: column; gap: 24px; } .partner-hero h1 { font-size: 2rem; } }
       `}</style>
 
@@ -110,7 +110,7 @@ export default function PartnersPage() {
       <section className="bounties-section">
         <div className="bounties-header">
           <h2>🎯 Top Bounties Available Now</h2>
-          <p style={{color: 'var(--text-muted)'}}>Get paid upfront + ongoing royalties. Claim one today.</p>
+          <p style={{color: '#6b6b76'}}>Get paid upfront + ongoing royalties. Claim one today.</p>
         </div>
         <div className="bounties-grid">
           <div className="bounty-mini">
@@ -146,7 +146,7 @@ export default function PartnersPage() {
       <section className="split-section">
         <div className="split-header">
           <h2>The Revenue Model</h2>
-          <p style={{color: 'var(--text-muted)'}}>Fair, transparent, usage-based payouts</p>
+          <p style={{color: '#6b6b76'}}>Fair, transparent, usage-based payouts</p>
         </div>
         <div className="split-content">
           <div className="split-bar">
@@ -161,7 +161,7 @@ export default function PartnersPage() {
           </div>
           
           <div className="split-explainer">
-            <h4>🎵 How Payouts Work (The Spotify Model)</h4>
+            <h4>💰 How Payouts Work</h4>
             <p>We take <strong>70% of all monthly revenue</strong> and distribute it to partners based on <strong>system usage</strong> — how many times users copy, use, or run your systems.</p>
             <p>This means: the more useful your system, the more you earn. Build something people actually use, and get paid every single month.</p>
             
@@ -177,7 +177,7 @@ export default function PartnersPage() {
               </div>
               <div className="split-example-row total">
                 <span>Your Payout</span>
-                <span style={{color: 'var(--success)'}}>$1,050/mo</span>
+                <span style={{color: '#10b981'}}>$1,050/mo</span>
               </div>
             </div>
           </div>

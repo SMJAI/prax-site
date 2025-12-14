@@ -1,8 +1,17 @@
 import { currentUser } from "@clerk/nextjs/server";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 
 export default async function VaultPage() {
   const user = await currentUser();
+
+  // Check if user has pro access
+  const isPro = user?.publicMetadata?.isPro === true;
+
+  // If not pro, redirect to pricing
+  if (!isPro) {
+    redirect('/upgrade');
+  }
 
   return (
     <>
@@ -33,7 +42,6 @@ export default async function VaultPage() {
         </div>
       </div>
 
-      {/* Filters */}
       <div className="filter-section">
         <div className="filter-row">
           <div className="search-box">
@@ -51,7 +59,6 @@ export default async function VaultPage() {
         </div>
       </div>
 
-      {/* Pro Systems Table */}
       <div className="prompt-table-section">
         <p className="results-info">Showing 100+ Pro Systems</p>
         <div className="table-wrapper">
@@ -98,34 +105,12 @@ export default async function VaultPage() {
                   <button className="btn-copy">📋 Copy</button>
                 </td>
               </tr>
-              <tr>
-                <td><span className="cat-badge">💼 Business</span></td>
-                <td>
-                  <div className="p-title">🔥 Sales Call Analyzer</div>
-                  <div className="p-desc">Analyze sales calls for objections, sentiment, and next steps</div>
-                </td>
-                <td className="td-model">Claude / GPT-4o</td>
-                <td className="td-actions">
-                  <button className="btn-copy">📋 Copy</button>
-                </td>
-              </tr>
-              <tr>
-                <td><span className="cat-badge">✍️ Writing</span></td>
-                <td>
-                  <div className="p-title">🔥 Book Outline Generator</div>
-                  <div className="p-desc">Create detailed book outlines with chapter summaries</div>
-                </td>
-                <td className="td-model">GPT-4o</td>
-                <td className="td-actions">
-                  <button className="btn-copy">📋 Copy</button>
-                </td>
-              </tr>
             </tbody>
           </table>
         </div>
       </div>
 
-      <footer className="footer">
+      <footer className="footer" style={{marginTop: '60px'}}>
         <div>© 2025 Prax. A product of SNIPAI UK LTD (Company No. 16865430)</div>
         <div className="footer-links">
           <Link href="/about">About</Link>
