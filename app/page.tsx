@@ -1,106 +1,173 @@
-import { currentUser } from "@clerk/nextjs/server";
 import Link from "next/link";
-import { redirect } from "next/navigation";
 
-export default async function VaultPage() {
-  const user = await currentUser();
-
-  // Check if user has pro access
-  const isPro = user?.publicMetadata?.isPro === true;
-
-  // If not pro, redirect to pricing
-  if (!isPro) {
-    redirect('/upgrade');
-  }
-
+export default function Home() {
   return (
     <>
-      <section className="vault-hero">
-        <h1>🔐 Pro Playbooks</h1>
-        <p style={{color: 'var(--text-secondary)', maxWidth: '600px', margin: '0 auto'}}>
-          Welcome back, <strong>{user?.firstName || user?.emailAddresses[0]?.emailAddress || 'Pro Member'}</strong>! 
-          Access your complete library of production-ready AI systems.
-        </p>
+      {/* Hero Section */}
+      <section className="hero">
+        <div className="hero-badge">⚡ 200+ Production-Ready Systems</div>
+        <h1>AI Systems That <span>Actually Work</span></h1>
+        <p>Stop wasting hours on prompt engineering. Copy battle-tested AI systems used by top teams.</p>
       </section>
 
-      <div className="vault-stats">
-        <div className="vault-stat">
-          <div className="vault-stat-value">100+</div>
-          <div className="vault-stat-label">Pro Systems</div>
+      {/* Stats */}
+      <div className="stats-bar">
+        <div className="stat">
+          <div className="stat-value">100</div>
+          <div className="stat-label">Free Systems</div>
         </div>
-        <div className="vault-stat">
-          <div className="vault-stat-value">11</div>
-          <div className="vault-stat-label">Categories</div>
+        <div className="stat">
+          <div className="stat-value">100</div>
+          <div className="stat-label">Pro Systems</div>
         </div>
-        <div className="vault-stat">
-          <div className="vault-stat-value">Weekly</div>
-          <div className="vault-stat-label">Updates</div>
+        <div className="stat">
+          <div className="stat-value">11</div>
+          <div className="stat-label">Categories</div>
         </div>
-        <div className="vault-stat">
-          <div className="vault-stat-value">∞</div>
-          <div className="vault-stat-label">Lifetime Access</div>
+        <div className="stat">
+          <div className="stat-value">Weekly</div>
+          <div className="stat-label">Updates</div>
         </div>
       </div>
 
+      {/* Filters */}
       <div className="filter-section">
         <div className="filter-row">
           <div className="search-box">
             <span className="search-icon">🔍</span>
-            <input type="text" className="search-input" placeholder="Search pro systems..." />
+            <input type="text" className="search-input" placeholder="Search systems..." />
+          </div>
+          <div className="sort-container">
+            <span className="sort-label">Sort:</span>
+            <button className="sort-btn active">Default</button>
+            <button className="sort-btn">Top Voted</button>
+            <button className="sort-btn">Most Copied</button>
+            <button className="sort-btn">A-Z</button>
           </div>
         </div>
         <div className="filter-container">
-          <button className="filter-btn active">All Pro Systems</button>
+          <button className="filter-btn active">All (200)</button>
           <button className="filter-btn">🤖 AI & Agents</button>
           <button className="filter-btn">📣 Marketing</button>
+          <button className="filter-btn">📚 Education</button>
+          <button className="filter-btn">🧠 Reasoning</button>
           <button className="filter-btn">💻 Coding</button>
+          <button className="filter-btn">🔬 Science</button>
           <button className="filter-btn">💼 Business</button>
           <button className="filter-btn">✍️ Writing</button>
+          <button className="filter-btn">📊 Analysis</button>
+          <button className="filter-btn">🎨 Creative</button>
+          <button className="filter-btn">👔 Professional</button>
         </div>
       </div>
 
+      {/* Systems Table */}
       <div className="prompt-table-section">
-        <p className="results-info">Showing 100+ Pro Systems</p>
+        <p className="results-info">Showing 20 of 100 free systems</p>
         <div className="table-wrapper">
           <table className="prompt-table">
             <thead>
               <tr>
+                <th style={{width: '60px', textAlign: 'center'}}>Votes</th>
                 <th style={{width: '140px'}}>Category</th>
                 <th>System</th>
+                <th style={{width: '70px', textAlign: 'center'}}>Copies</th>
                 <th style={{width: '120px'}}>Model</th>
                 <th style={{width: '140px', textAlign: 'right'}}>Actions</th>
               </tr>
             </thead>
             <tbody>
               <tr>
+                <td className="td-votes">
+                  <div className="vote-box">
+                    <button className="vote-btn">▲</button>
+                    <span className="vote-count">42</span>
+                    <button className="vote-btn">▼</button>
+                  </div>
+                </td>
                 <td><span className="cat-badge">🤖 AI & Agents</span></td>
                 <td>
-                  <div className="p-title">🔥 Enterprise AI Assistant Builder</div>
-                  <div className="p-desc">Build complete AI assistants with memory, tools, and guardrails</div>
+                  <div className="p-title">Custom GPT Builder</div>
+                  <div className="p-desc">Design a specialized GPT with complete instructions</div>
                 </td>
-                <td className="td-model">Claude / GPT-4o</td>
-                <td className="td-actions">
-                  <button className="btn-copy">📋 Copy</button>
-                </td>
-              </tr>
-              <tr>
-                <td><span className="cat-badge">📣 Marketing</span></td>
-                <td>
-                  <div className="p-title">🔥 Full-Funnel Content System</div>
-                  <div className="p-desc">Create TOFU, MOFU, BOFU content that converts</div>
-                </td>
+                <td className="td-copies">1.2k</td>
                 <td className="td-model">GPT-4o</td>
                 <td className="td-actions">
                   <button className="btn-copy">📋 Copy</button>
                 </td>
               </tr>
               <tr>
+                <td className="td-votes">
+                  <div className="vote-box">
+                    <button className="vote-btn">▲</button>
+                    <span className="vote-count">38</span>
+                    <button className="vote-btn">▼</button>
+                  </div>
+                </td>
                 <td><span className="cat-badge">💻 Coding</span></td>
                 <td>
-                  <div className="p-title">🔥 Full-Stack Code Generator</div>
-                  <div className="p-desc">Generate complete features with frontend, backend, and tests</div>
+                  <div className="p-title">Production Python Generator</div>
+                  <div className="p-desc">Google-style typed Python with tests and docs</div>
                 </td>
+                <td className="td-copies">892</td>
+                <td className="td-model">Claude / GPT-4o</td>
+                <td className="td-actions">
+                  <button className="btn-copy">📋 Copy</button>
+                </td>
+              </tr>
+              <tr>
+                <td className="td-votes">
+                  <div className="vote-box">
+                    <button className="vote-btn">▲</button>
+                    <span className="vote-count">35</span>
+                    <button className="vote-btn">▼</button>
+                  </div>
+                </td>
+                <td><span className="cat-badge">📣 Marketing</span></td>
+                <td>
+                  <div className="p-title">SEO Content System</div>
+                  <div className="p-desc">Create high-ranking content with semantic optimization</div>
+                </td>
+                <td className="td-copies">756</td>
+                <td className="td-model">GPT-4o / Claude</td>
+                <td className="td-actions">
+                  <button className="btn-copy">📋 Copy</button>
+                </td>
+              </tr>
+              <tr>
+                <td className="td-votes">
+                  <div className="vote-box">
+                    <button className="vote-btn">▲</button>
+                    <span className="vote-count">31</span>
+                    <button className="vote-btn">▼</button>
+                  </div>
+                </td>
+                <td><span className="cat-badge">💼 Business</span></td>
+                <td>
+                  <div className="p-title">Lead Qualification Agent</div>
+                  <div className="p-desc">Score and qualify leads with AI-powered analysis</div>
+                </td>
+                <td className="td-copies">623</td>
                 <td className="td-model">Claude</td>
+                <td className="td-actions">
+                  <button className="btn-copy">📋 Copy</button>
+                </td>
+              </tr>
+              <tr>
+                <td className="td-votes">
+                  <div className="vote-box">
+                    <button className="vote-btn">▲</button>
+                    <span className="vote-count">28</span>
+                    <button className="vote-btn">▼</button>
+                  </div>
+                </td>
+                <td><span className="cat-badge">✍️ Writing</span></td>
+                <td>
+                  <div className="p-title">Blog Post Generator</div>
+                  <div className="p-desc">Long-form content with proper structure and SEO</div>
+                </td>
+                <td className="td-copies">589</td>
+                <td className="td-model">GPT-4o</td>
                 <td className="td-actions">
                   <button className="btn-copy">📋 Copy</button>
                 </td>
@@ -110,7 +177,61 @@ export default async function VaultPage() {
         </div>
       </div>
 
-      <footer className="footer" style={{marginTop: '60px'}}>
+      {/* Pricing Section */}
+      <section className="pricing-section" id="pricing">
+        <div className="pricing-header">
+          <h2>Choose Your Plan</h2>
+          <p>From solo makers to teams — unlock production-ready AI systems</p>
+        </div>
+
+        <div className="pricing-grid">
+          <div className="pricing-card">
+            <div className="pricing-name">Starter Pack</div>
+            <div className="pricing-desc">Perfect for trying Prax quality</div>
+            <div className="pricing-price">$29</div>
+            <div className="pricing-term">one-time payment</div>
+            <ul className="pricing-features">
+              <li>20 curated Pro systems</li>
+              <li>All 11 categories sampled</li>
+              <li>Prompt + Guide included</li>
+              <li>Email support</li>
+            </ul>
+            <a href="https://praxai.lemonsqueezy.com/buy/625a0310-d89e-431f-85d2-cbb3a1a2ecec" className="pricing-btn pricing-btn-secondary">Get Starter Pack</a>
+          </div>
+          <div className="pricing-card featured">
+            <div className="pricing-name">Team Playbooks</div>
+            <div className="pricing-desc">Best for teams & agencies</div>
+            <div className="pricing-price">$299</div>
+            <div className="pricing-term">lifetime access</div>
+            <ul className="pricing-features">
+              <li>100+ systems + lifetime updates</li>
+              <li>Prompt + Guide + Automation</li>
+              <li>Team license (up to 5 seats)</li>
+              <li>Priority support</li>
+            </ul>
+            <a href="https://praxai.lemonsqueezy.com/buy/15eeba33-3d0d-45a4-898b-998cefce0157" className="pricing-btn pricing-btn-primary">Get Team Playbooks</a>
+          </div>
+          <div className="pricing-card">
+            <div className="pricing-name">Monthly Pro</div>
+            <div className="pricing-desc">Always up-to-date access</div>
+            <div className="pricing-price">$49<span>/mo</span></div>
+            <div className="pricing-term">cancel anytime</div>
+            <ul className="pricing-features">
+              <li>100+ systems + all updates</li>
+              <li>Prompt + Guide + Automation</li>
+              <li>Tested on GPT-4o, Claude & Gemini</li>
+              <li>Updates when models change</li>
+            </ul>
+            <a href="https://praxai.lemonsqueezy.com/buy/557bd908-945f-4dd3-bbc0-e701df7303b9" className="pricing-btn pricing-btn-secondary">Start Monthly</a>
+          </div>
+        </div>
+        <div className="team-note">
+          <p>🏢 <strong>Need Enterprise?</strong> Custom systems, unlimited seats, dedicated support. <Link href="/agencies">Learn more →</Link></p>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="footer">
         <div>© 2025 Prax. A product of SNIPAI UK LTD (Company No. 16865430)</div>
         <div className="footer-links">
           <Link href="/about">About</Link>
