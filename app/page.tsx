@@ -411,7 +411,7 @@ export default function Home() {
               <li>All 11 categories sampled</li>
               <li>Prompt + Guide included</li>
             </ul>
-            <a href="https://praxai.lemonsqueezy.com/buy/625a0310-d89e-431f-85d2-cbb3a1a2ecec" className="pricing-btn pricing-btn-secondary">Get Starter</a>
+            <a href="https://praxdigital.lemonsqueezy.com/buy/625a0310-d89e-431f-85d2-cbb3a1a2ecec" className="pricing-btn pricing-btn-secondary">Get Starter</a>
           </div>
           <div className="pricing-card featured">
             <div className="pricing-name">Team Playbooks</div>
@@ -423,7 +423,7 @@ export default function Home() {
               <li>Prompt + Guide + Automation</li>
               <li>Team license (5 seats)</li>
             </ul>
-            <a href="https://praxai.lemonsqueezy.com/buy/15eeba33-3d0d-45a4-898b-998cefce0157" className="pricing-btn pricing-btn-primary">Get Team Access</a>
+            <a href="https://praxdigital.lemonsqueezy.com/buy/15eeba33-3d0d-45a4-898b-998cefce0157" className="pricing-btn pricing-btn-primary">Get Team Access</a>
           </div>
           <div className="pricing-card">
             <div className="pricing-name">Monthly Pro</div>
@@ -435,7 +435,7 @@ export default function Home() {
               <li>Prompt + Guide + Automation</li>
               <li>New systems weekly</li>
             </ul>
-            <a href="https://praxai.lemonsqueezy.com/buy/557bd908-945f-4dd3-bbc0-e701df7303b9" className="pricing-btn pricing-btn-secondary">Start Monthly</a>
+            <a href="https://praxdigital.lemonsqueezy.com/buy/557bd908-945f-4dd3-bbc0-e701df7303b9" className="pricing-btn pricing-btn-secondary">Start Monthly</a>
           </div>
         </div>
       </section>
