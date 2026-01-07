@@ -57,7 +57,7 @@ export default function AgenciesPage() {
         <h1>Deliver Client Work<br/><span>10x Faster</span></h1>
         <p>Equip your entire team with production-ready AI systems. Battle-tested prompts that deliver consistent, high-quality output every time.</p>
         <div className="hero-cta">
-          <a href="https://praxai.lemonsqueezy.com/buy/15eeba33-3d0d-45a4-898b-998cefce0157" className="btn btn-primary" style={{padding: '16px 32px', fontSize: '1.1rem'}}>Get Team Access — $299</a>
+          <a href="https://praxdigital.lemonsqueezy.com/checkout/buy/15eeba33-3d0d-45a4-898b-998cefce0157" className="btn btn-primary" style={{padding: '16px 32px', fontSize: '1.1rem'}}>Get Team Access — $299</a>
           <a href="#demos" className="btn" style={{padding: '16px 32px'}}>Watch Demos ↓</a>
         </div>
       </section>
@@ -155,7 +155,7 @@ export default function AgenciesPage() {
         <h2>Ready to Deliver More With Less?</h2>
         <p>Join agencies who stopped wasting time on prompt engineering and started delivering.</p>
         <div className="cta-buttons">
-          <a href="https://praxai.lemonsqueezy.com/buy/15eeba33-3d0d-45a4-898b-998cefce0157" className="btn btn-primary" style={{padding: '16px 32px'}}>Get Team Access — $299</a>
+          <a href="https://praxdigital.lemonsqueezy.com/checkout/buy/15eeba33-3d0d-45a4-898b-998cefce0157" className="btn btn-primary" style={{padding: '16px 32px'}}>Get Team Access — $299</a>
           <a href="mailto:hello@prax.digital?subject=Agency%20Inquiry" className="btn" style={{padding: '16px 32px'}}>Talk to Us →</a>
         </div>
       </section>
