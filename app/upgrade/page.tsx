@@ -109,59 +109,7 @@ export default async function UpgradePage() {
         <p>🔒 Secure checkout via LemonSqueezy. Instant access after purchase.</p>
       </div>
 
-<<<<<<< HEAD
-      {/* Pricing Section */}
-      <section className="pricing-section" id="pricing">
-        <div className="pricing-header">
-          <h2>Want More? Unlock Pro Systems</h2>
-          <p>Get 100+ advanced systems with video guides and automation files</p>
-        </div>
-
-        <div className="pricing-grid">
-          <div className="pricing-card">
-            <div className="pricing-name">Starter Pack</div>
-            <div className="pricing-desc">Perfect for trying Prax</div>
-            <div className="pricing-price">$29</div>
-            <div className="pricing-term">one-time</div>
-            <ul className="pricing-features">
-              <li>20 curated Pro systems</li>
-              <li>All 11 categories sampled</li>
-              <li>Prompt + Guide included</li>
-            </ul>
-            <a href="https://praxdigital.lemonsqueezy.com/checkout/buy/625a0310-d89e-431f-85d2-cbb3a1a2ecec?discount=0" className="pricing-btn pricing-btn-secondary">Get Starter</a>
-          </div>
-          <div className="pricing-card featured">
-            <div className="pricing-name">Team Playbooks</div>
-            <div className="pricing-desc">Best for teams</div>
-            <div className="pricing-price">$299</div>
-            <div className="pricing-term">lifetime</div>
-            <ul className="pricing-features">
-              <li>100+ systems + updates</li>
-              <li>Prompt + Guide + Automation</li>
-              <li>Team license (5 seats)</li>
-            </ul>
-            <a href="https://praxdigital.lemonsqueezy.com/checkout/buy/15eeba33-3d0d-45a4-898b-998cefce0157" className="pricing-btn pricing-btn-primary">Get Team Access</a>
-          </div>
-          <div className="pricing-card">
-            <div className="pricing-name">Monthly Pro</div>
-            <div className="pricing-desc">Always up-to-date</div>
-            <div className="pricing-price">$49<span>/mo</span></div>
-            <div className="pricing-term">cancel anytime</div>
-            <ul className="pricing-features">
-              <li>100+ systems + updates</li>
-              <li>Prompt + Guide + Automation</li>
-              <li>New systems weekly</li>
-            </ul>
-            <a href="https://praxdigital.lemonsqueezy.com/checkout/buy/557bd908-945f-4dd3-bbc0-e701df7303b9" className="pricing-btn pricing-btn-secondary">Start Monthly</a>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="footer">
-=======
       <footer className="footer" style={{marginTop: '80px'}}>
->>>>>>> a1552b7 (Fix LemonSqueezy links, add demo videos to agencies page)
         <div>© 2025 Prax. A product of SNIPAI UK LTD (Company No. 16865430)</div>
         <div className="footer-links">
           <Link href="/about">About</Link>
